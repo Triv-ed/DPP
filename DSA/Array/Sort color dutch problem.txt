@@ -1,0 +1,35 @@
+class Solution {
+public:
+    void sortColors(vector<int>& a) {
+        int zcount,onecount,twocount;
+        zcount=onecount=twocount=0;
+    for(int i=0; i<a.size(); i++){
+        if(a[i]==0){
+        zcount++;
+        }
+       else if(a[i]==1){
+        onecount++;
+       }
+        else{
+        twocount++;
+        }
+        }
+
+        int index=0;
+   
+       
+        while(zcount--){
+            a[index]=0;
+            index++;
+        }
+        while(onecount--){
+            a[index]=1;
+            index++;
+        }
+        while(twocount--){
+            a[index]=2;
+            index++;
+        }
+    
+    }
+};

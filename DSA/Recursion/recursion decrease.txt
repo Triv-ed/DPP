@@ -1,0 +1,22 @@
+#include <iostream>
+
+using namespace std;
+
+void getnum(int r){
+    if(r==0)
+    return ;
+    
+    cout<<r<<" "<<endl;
+    getnum(r-1);
+}
+
+int main()
+{
+   int n;
+   cout<<"enter the number of element"<<endl;
+   cin>>n;
+   cout<<"the elements in decreasing order are"<<endl;
+   getnum(n);
+
+    return 0;
+}

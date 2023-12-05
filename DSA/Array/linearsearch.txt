@@ -1,0 +1,60 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int arr[5];
+    int target; bool flag=0;
+    int n=5;
+    for(int i=0; i<n; i++){
+        cin>>arr[i];
+    }
+    cout<<"enter target"<<endl;
+    cin>>target;
+    
+    
+    for(int i=0; i<n; i++){
+       if(arr[i]==target){
+           flag=1;
+           cout<<"target found at"<<i<<endl;
+           break;
+       } 
+    }
+    if(flag==0){
+        cout<<"target not found"<<endl;
+    }
+
+    return 0;
+}
+
+
+//using simple boolean function
+
+
+
+#include <iostream>
+
+using namespace std;
+
+bool Linearsearch(int arr[],int size,int target){
+    for(int i=0; i<size; i++){
+        if(arr[i]==target){
+            return 1;
+        }
+    }
+    return 0;
+}
+int main(){
+    int arr[5]={1,2,3,4,0};
+    int n=5;
+    int target=78;
+    bool ans=Linearsearch(arr,n,target);
+    if(ans==1){
+        cout<<"found"<<endl;
+    }
+        else{
+            cout<<"not found"<<endl;
+        }
+   return 0; 
+}

@@ -1,0 +1,129 @@
+//COUNT 0 AND 1 IN ARRAY
+
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int arr[7]={0,1,1,1,1,0,1};
+    int zcount=0,ocount=0;
+    for(int i=0; i<7; i++ ){
+        if(arr[i]==0){
+            zcount++;
+        }
+        if(arr[i]==1){
+            ocount++;
+        }
+    }
+    cout<<zcount<<" "<<ocount<<endl;
+
+    return 0;
+}
+
+//MIN IN ARRAY
+
+#include <iostream>
+#include <limits.h>
+
+using namespace std;
+
+int minarray(int arr[],int n ){
+     int min=INT_MAX;
+    for(int i=0; i<n; i++){
+        if(arr[i]<min){
+           min=arr[i];
+        }
+    }
+    return min;
+}
+int main(){
+    int arr[8]={12,3,4,0,44,-1,-22};
+    int n=8;
+    int min1=minarray(arr,n);
+    cout<<min1<<endl;
+    
+}
+
+//REVERSE ARRAY CHANGING FOR LOOP
+
+
+#include <iostream>
+#include <limits.h>
+
+using namespace std;
+void reverse(int arr[],int size){
+    for(int i=size-1; i>=0; i--){
+        cout<<arr[i]<<" "<<endl;
+    }
+}
+int main(){
+//STATIC
+    // int arr[8]={12,3,4,0,44,-1,-22,99};
+    // reverse(arr,8);
+ //DYNAMIC   
+    int n;
+    cin>>n;
+    int arr[n];
+    for(int i=0; i<n; i++){
+        cin>>arr[i];
+    }
+    reverse(arr,n);
+    return 0;
+
+    
+}
+
+// Breaking the records
+
+vector<int> breakingRecords(vector<int> &scores) {
+    int min=scores[0],max=scores[0],min1=0,max1=0;
+    for(int i=0; i<scores.size(); i++){
+        if(scores[i]>max){
+            max=scores[i];
+            max1++;
+        }
+        if(scores[i]<min){
+            min=scores[i];
+            min1++;
+        }
+        
+    }
+    return vector<int> ({max1,min1});
+    
+
+}
+
+//Target given for the array
+class Solution {
+public:
+    vector<int> twoSum(vector<int>& nums, int target) {
+        vector <int> a;
+        int n= nums.size();
+        for(int i=0; i<n; i++){
+            for(int j=i+1; j<n; j++){
+                if(nums[i]+nums[j]==target){
+                    a.push_back(i);
+                    a.push_back(j);
+                }
+            }
+        }
+        
+        return a;
+    }
+};
+
+// BUBBLE SORT OF AN ARRAY
+void bubbleSort(int arr[], int n) {
+    for (int i = 0; i < n - 1; i++) {
+        for (int j = 0; j < n - i - 1; j++) {
+            // If the element found is greater than the next element, swap them
+            if (arr[j] > arr[j + 1]) {
+                // Swap arr[j] and arr[j + 1]
+                int temp = arr[j];
+                arr[j] = arr[j + 1];
+                arr[j + 1] = temp;
+            }
+        }
+    }
+}

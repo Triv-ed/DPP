@@ -1,0 +1,12 @@
+static void printLinkedList(SinglyLinkedListNode head) {
+                SinglyLinkedListNode curr=head;
+                if(curr==null){
+                    System.out.println("List is empty");
+                    return;
+                }
+                else{
+                    while(curr!=null){
+                        System.out.println(curr.data);
+                        curr=curr.next;
+                    }
+                }
